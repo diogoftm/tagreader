@@ -10,7 +10,7 @@ wifi:
 captive_portal:
 
 dashboard_import:
-  package_import_url: github://smarthomejunkie/tagreader/tagreader.yaml
+  package_import_url: github://diogoftm/tagreader/tagreader.yaml
 
 improv_serial:
 
@@ -21,8 +21,6 @@ substitutions:
 
 esphome:
   name: $name
-  platform: ESP8266
-  board: d1_mini
 
   # Automatically add the mac address to the name
   # so you can use a single firmware for all devices
@@ -50,7 +48,10 @@ esphome:
         flash_length: 500ms
     - switch.turn_on: buzzer_enabled
     - switch.turn_on: led_enabled
-
+    
+esp8266:
+  board: d1_mini
+  
 # Define switches to control LED and buzzer from HA
 switch:
 - platform: template
